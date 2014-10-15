@@ -20,26 +20,17 @@ public class ResponseListFactoryImpl implements ResponseListFactory {
 	
 	@Override
 	public String getXmlFromAggregatedResponse(QueryObject queryObject, List<Object> aggregatedResponseList) {
-		GetAlertInformationResponseType aggregatedResponse = new GetAlertInformationResponseType();
-
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
+		final GetAlertInformationResponseType aggregatedResponse = new GetAlertInformationResponseType();
 
 	    for (Object object : aggregatedResponseList) {
-	    	GetAlertInformationResponseType response = (GetAlertInformationResponseType)object;
-			aggregatedResponse.getRequestActivity().addAll(response.getRequestActivity());
+	    	final GetAlertInformationResponseType response = (GetAlertInformationResponseType) object;
+			aggregatedResponse.getAlertInformation().addAll(response.getAlertInformation());
 		}
 
 	    if (log.isInfoEnabled()) {
     		String subjectOfCareId = queryObject.getFindContent().getRegisteredResidentIdentification();
-        	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getRequestActivity().size() ,subjectOfCareId);
+        	log.info("Returning {} aggregated remisstatus for subject of care id {}", aggregatedResponse.getAlertInformation().size() ,subjectOfCareId);
         }
-
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
-
 
         // Since the class GetAlertInformationResponseType don't have an @XmlRootElement annotation
         // we need to use the ObjectFactory to add it.
