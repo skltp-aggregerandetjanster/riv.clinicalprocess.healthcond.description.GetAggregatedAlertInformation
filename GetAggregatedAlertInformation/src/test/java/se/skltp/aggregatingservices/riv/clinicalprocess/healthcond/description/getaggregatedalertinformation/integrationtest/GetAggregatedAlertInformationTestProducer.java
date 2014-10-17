@@ -21,7 +21,7 @@ public class GetAggregatedAlertInformationTestProducer implements GetAlertInform
 	}
 
 	public GetAlertInformationResponseType getAlertInformation(String logicalAddress, GetAlertInformationType request) {
-		
+		System.out.println("TESTPROD: " + testDb);
 		Object response = testDb.processRequest(logicalAddress, request.getPatientId().getId());
 		
 		
@@ -30,5 +30,6 @@ public class GetAggregatedAlertInformationTestProducer implements GetAlertInform
 		}
 		
 		return (GetAlertInformationResponseType) response;
+		//return new GetAlertInformationResponseType();
 	}
 }
