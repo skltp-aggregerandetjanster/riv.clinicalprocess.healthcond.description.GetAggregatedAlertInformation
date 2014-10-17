@@ -169,25 +169,9 @@ public class GetAggregatedAlertInformationIntegrationTest extends AbstractAggreg
 
     	// Verify the response size and content
     	GetAlertInformationResponseType response = responseHolder.value;
-    	int expextedResponseSize = testData.length;
+    	assertEquals(testData.length, response.getAlertInformation().size());
+    	
 
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		assertEquals(expextedResponseSize, response.getRequestActivity().size());
-		
-		for (int i = 0; i < testData.length; i++) {
-			RequestActivityType responseElement = response.getRequestActivity().get(i);
-			assertEquals(registeredResidentId, responseElement.getSubjectOfCareId());		
-
-			assertEquals(testData[i].getExpectedBusinessObjectId(), responseElement.getSenderRequestId());
-			assertEquals(testData[i].getExpectedLogicalAddress(), responseElement.getCareUnit());		
-		}
-
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
 
 
     	// Verify the size of the processing status and return it for further analysis

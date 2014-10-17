@@ -20,7 +20,6 @@ public class QueryObjectFactoryImpl implements QueryObjectFactory {
 		this.eiServiceDomain = eiServiceDomain;
 	}
 
-	@SuppressWarnings("unused")
 	private String eiCategorization;
 	public void setEiCategorization(String eiCategorization) {
 		this.eiCategorization = eiCategorization;
@@ -33,7 +32,7 @@ public class QueryObjectFactoryImpl implements QueryObjectFactory {
 	 * 2. "riv:clinicalprocess:healthcond:description" --> serviceDomain
 	 * 3. "voo" --> categorization
 	 * 4. SourceSystemHSAId --> LogicalAddress
-	 * 5. SourceSystemHSAId --> SourceSystem
+	 * 5. SourceSystemHSAId --> SourceSystem	
 	 */
 	public QueryObject createQueryObject(Node node) {
 		GetAlertInformationType request = (GetAlertInformationType)ju.unmarshal(node);

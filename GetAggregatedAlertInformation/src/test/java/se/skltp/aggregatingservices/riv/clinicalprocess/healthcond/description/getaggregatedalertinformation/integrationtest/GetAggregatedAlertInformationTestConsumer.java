@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import riv.clinicalprocess.healthcond.description.getalertinformation.v2.rivtabp21.GetAlertInformationResponderInterface;
 import riv.clinicalprocess.healthcond.description.getalertinformationresponder.v2.GetAlertInformationResponseType;
 import riv.clinicalprocess.healthcond.description.getalertinformationresponder.v2.GetAlertInformationType;
+import riv.clinicalprocess.healthcond.description.v2.PersonIdType;
 import se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description.getaggregatedalertinformation.GetAggregatedAlertInformationMuleServer;
 import se.skltp.agp.test.consumer.AbstractTestConsumer;
 import se.skltp.agp.test.consumer.SoapHeaderCxfInterceptor;
@@ -30,14 +31,8 @@ public class GetAggregatedAlertInformationTestConsumer extends AbstractTestConsu
 		consumer.callService("logical-adress", personnummer, processingStatusHolder, responseHolder);
 
 
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
 
-		log.info("Returned #timeslots = " + responseHolder.value.getRequestActivity().size());
-
-		*/
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
+		log.info("Returned #timeslots = " + responseHolder.value.getAlertInformation().size());
 
 	}
 
@@ -53,15 +48,10 @@ public class GetAggregatedAlertInformationTestConsumer extends AbstractTestConsu
 		
 		GetAlertInformationType request = new GetAlertInformationType();
 
-
-        // TODO: CHANGE GENERATED SAMPLE CODE - START
-        if (1==1) throw new UnsupportedOperationException("Not yet implemented");
-        /*
-
-		request.setSubjectOfCareId(registeredResidentId);
-
-        */
-        // TODO: CHANGE GENERATED SAMPLE CODE - END
+		final PersonIdType personIdType = new PersonIdType();
+		personIdType.setId(registeredResidentId);
+		personIdType.setType("1.2.752.129.2.1.3.1");
+		request.setPatientId(personIdType);
 
 		GetAlertInformationResponseType response = _service.getAlertInformation(logicalAddress, request);
 		responseHolder.value = response;
