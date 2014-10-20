@@ -17,13 +17,14 @@ import riv.clinicalprocess.healthcond.description.v2.HealthcareProfessionalType;
 import riv.clinicalprocess.healthcond.description.v2.OrgUnitType;
 import riv.clinicalprocess.healthcond.description.v2.PatientSummaryHeaderType;
 import riv.clinicalprocess.healthcond.description.v2.PersonIdType;
+import riv.clinicalprocess.healthcond.description.v2.TimePeriodType;
 import se.skltp.agp.test.producer.TestProducerDb;
 
 public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb {
 
 	private static final Logger log = LoggerFactory
 			.getLogger(GetAggregatedAlertInformationTestProducerDb.class);
-	private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("YYYYMMDDhhmmss");
+	private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("yyyyMMddhhmmss");
 	
 	@Override
 	public Object processRequest(final String logicalAddress, final String registeredResidentId) {
@@ -81,6 +82,8 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 		alertInformation.setAlertInformationHeader(header);
 		
 		final AlertInformationBodyType body = new AlertInformationBodyType();
+		body.setValidityTimePeriod(generateTimePeriod());
+		body.setTypeOfAlertInformation(generateCVType());
 		body.setAlertInformationComment("AlertComment");
 		body.setObsoleteComment("ObsoleteComment");
 
@@ -98,5 +101,12 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 		cvType.setDisplayName("DisplayName");
 		cvType.setOriginalText("OriginalText");
 		return cvType;
+	}
+	
+	protected TimePeriodType generateTimePeriod() {
+		final TimePeriodType type = new TimePeriodType();
+		type.setEnd(df.format(new Date()));
+		type.setStart(df.format(new Date()));
+		return type;
 	}
 }

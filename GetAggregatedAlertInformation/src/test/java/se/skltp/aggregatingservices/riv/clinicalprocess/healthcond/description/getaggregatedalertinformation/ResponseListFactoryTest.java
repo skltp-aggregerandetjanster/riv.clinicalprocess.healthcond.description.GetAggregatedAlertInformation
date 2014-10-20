@@ -8,7 +8,6 @@ import java.util.UUID;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Ignore;
 import org.mockito.Mockito;
 import org.soitoolkit.commons.mule.jaxb.JaxbUtil;
 
@@ -19,7 +18,6 @@ import riv.clinicalprocess.healthcond.description.v2.PatientSummaryHeaderType;
 import riv.clinicalprocess.healthcond.description.v2.PersonIdType;
 import se.skltp.agp.riv.itintegration.engagementindex.findcontentresponder.v1.FindContentType;
 import se.skltp.agp.service.api.QueryObject;
-import se.skltp.agp.service.api.ResponseListFactory;
 
 
 public class ResponseListFactoryTest {
