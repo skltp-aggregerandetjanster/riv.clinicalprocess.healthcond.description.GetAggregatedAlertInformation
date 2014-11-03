@@ -172,8 +172,6 @@ public class GetAggregatedAlertInformationIntegrationTest extends AbstractAggreg
     	assertEquals(testData.length, response.getAlertInformation().size());
     	
 
-
-
     	// Verify the size of the processing status and return it for further analysis
 		ProcessingStatusType statusList = processingStatusHolder.value;
 		assertEquals(expectedProcessingStatusSize, statusList.getProcessingStatusList().size());

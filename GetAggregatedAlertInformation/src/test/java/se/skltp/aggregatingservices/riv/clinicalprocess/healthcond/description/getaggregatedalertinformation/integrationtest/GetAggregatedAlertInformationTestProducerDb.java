@@ -14,9 +14,11 @@ import riv.clinicalprocess.healthcond.description.v2.AlertInformationBodyType;
 import riv.clinicalprocess.healthcond.description.v2.AlertInformationType;
 import riv.clinicalprocess.healthcond.description.v2.CVType;
 import riv.clinicalprocess.healthcond.description.v2.HealthcareProfessionalType;
+import riv.clinicalprocess.healthcond.description.v2.HyperSensitivityType;
 import riv.clinicalprocess.healthcond.description.v2.OrgUnitType;
 import riv.clinicalprocess.healthcond.description.v2.PatientSummaryHeaderType;
 import riv.clinicalprocess.healthcond.description.v2.PersonIdType;
+import riv.clinicalprocess.healthcond.description.v2.SeriousDiseaseType;
 import riv.clinicalprocess.healthcond.description.v2.TimePeriodType;
 import se.skltp.agp.test.producer.TestProducerDb;
 
@@ -83,7 +85,8 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 		
 		final AlertInformationBodyType body = new AlertInformationBodyType();
 		body.setValidityTimePeriod(generateTimePeriod());
-		body.setTypeOfAlertInformation(generateCVType());
+		body.setTypeOfAlertInformation(generateCVType("OO=12 SE=12", "1.2.752.129.2.2.2.1"));
+		body.setHypersensitivity(hyper());
 		body.setAlertInformationComment("AlertComment");
 		body.setObsoleteComment("ObsoleteComment");
 
@@ -91,15 +94,25 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 		
 		return alertInformation;
 	}
+	
+	protected HyperSensitivityType hyper() {
+		final HyperSensitivityType type = new HyperSensitivityType();
+		type.setTypeOfHypersensitivity(generateCVType("Läkemedelsöverkännslighet", "1.2.4.5.6", "Läkemedelsöverkännslighet"));
+		type.setDegreeOfSeverity(generateCVType("Livshotande", "1.2.752.129.2.2.3.3", "Livshotande"));
+		type.setDegreeOfCertainty(generateCVType("Konstaterad", "1.2.752.129.2.2.2.3.3", "Konstaterad"));
+		return type;
+	}
 
-	protected CVType generateCVType() {
+	protected CVType generateCVType(final String code, final String codeSystem, final String displayName) {
+		final CVType type = generateCVType(code, codeSystem);
+		type.setDisplayName(displayName);
+		return type;
+	}
+	
+	protected CVType generateCVType(final String code, final String codeSystem) {
 		final CVType cvType = new CVType();
-		cvType.setCode("Code");
-		cvType.setCodeSystem("CodeSystem");
-		cvType.setCodeSystemName("CodeSysteName");
-		cvType.setCodeSystemVersion("CodeSystemVersion");
-		cvType.setDisplayName("DisplayName");
-		cvType.setOriginalText("OriginalText");
+		cvType.setCode(code);
+		cvType.setCodeSystem(codeSystem);
 		return cvType;
 	}
 	
