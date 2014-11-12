@@ -49,7 +49,6 @@ public class QueryObjectFactoryTest {
 		final PersonIdType person = new PersonIdType();
 		person.setId(SUBJECTOFCARE);
 		type.setPatientId(person);
-		type.setSourceSystemHSAId(SOURCESYSTEMHSAID);
 		
 		final Node node = createNode(type);
 		final FindContentType findContent = testObject.createQueryObject(node).getFindContent();
@@ -57,8 +56,6 @@ public class QueryObjectFactoryTest {
 		assertEquals(CATEGORIZATION, findContent.getCategorization());
 		assertEquals(SERVICE_DOMAIN, findContent.getServiceDomain());
 		assertEquals(SUBJECTOFCARE, findContent.getRegisteredResidentIdentification());
-		assertEquals(SOURCESYSTEMHSAID, findContent.getLogicalAddress());
-		assertEquals(SOURCESYSTEMHSAID, findContent.getSourceSystem());
 		assertNull(findContent.getBusinessObjectInstanceIdentifier());
 		assertNull(findContent.getClinicalProcessInterestId());
 		assertNull(findContent.getDataController());
