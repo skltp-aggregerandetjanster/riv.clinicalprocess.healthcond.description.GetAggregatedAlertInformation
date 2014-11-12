@@ -45,7 +45,7 @@ public class QueryObjectFactoryTest {
 	@Test
 	public void testQueryObjectFactory() throws Exception {
 		final GetAlertInformationType type = new GetAlertInformationType();
-		
+		type.setSourceSystemHSAId(SOURCESYSTEMHSAID);
 		final PersonIdType person = new PersonIdType();
 		person.setId(SUBJECTOFCARE);
 		type.setPatientId(person);
@@ -56,6 +56,7 @@ public class QueryObjectFactoryTest {
 		assertEquals(CATEGORIZATION, findContent.getCategorization());
 		assertEquals(SERVICE_DOMAIN, findContent.getServiceDomain());
 		assertEquals(SUBJECTOFCARE, findContent.getRegisteredResidentIdentification());
+		assertEquals(SOURCESYSTEMHSAID, findContent.getSourceSystem());
 		assertNull(findContent.getBusinessObjectInstanceIdentifier());
 		assertNull(findContent.getClinicalProcessInterestId());
 		assertNull(findContent.getDataController());
