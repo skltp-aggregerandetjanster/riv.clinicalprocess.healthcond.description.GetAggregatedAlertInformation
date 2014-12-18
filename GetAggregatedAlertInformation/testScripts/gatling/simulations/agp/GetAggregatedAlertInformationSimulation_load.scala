@@ -12,12 +12,12 @@ class GetAggregatedAlertInformationSimulation_load extends Simulation {
   val testTimeSecs   = 120
   val noOfUsers      = 10
   val rampUpTimeSecs = 10
-        val minWaitMs      = 2000 milliseconds
+  val minWaitMs      = 2000 milliseconds
   val maxWaitMs      = 5000 milliseconds
 
   // System under test
-  val _baseURL        = "http://33.33.33.33:8088"
-  val _contextPath    = "/GetAggregatedAlertInformation/service/v2"
+  val _baseURL        = "https://qa.esb.ntjp.se:443"
+  val _contextPath    = "/vp/clinicalprocess/healthcond/description/GetAlertInformation/2/rivtabp21"
 
 
 
@@ -36,7 +36,7 @@ class GetAggregatedAlertInformationSimulation_load extends Simulation {
 
   val scn = scenario("GetAggregatedAlertInformation")
     .during(testTimeSecs) {
-      feed(csv("patients.csv").random)
+      feed(csv("alert_patients.csv").random)
       .exec(
         http("GetAggregatedAlertInformation ${patientid} - ${name}")
           .post(_contextPath)
@@ -45,7 +45,7 @@ class GetAggregatedAlertInformationSimulation_load extends Simulation {
           .check(status.is(session => session.getTypedAttribute[String]("status").toInt))
           .check(xpath("soap:Envelope", List("soap" -> "http://schemas.xmlsoap.org/soap/envelope/")).exists)
           .check(xpath("//*[local-name()='alertInformation']",
-                         List("ns2" -> "urn:riv:clinicalprocess:activityprescription:actoutcome:GetMedicationHistoryResponder:2")).count.is(session => session.getTypedAttribute[String]("count").toInt))
+                         List("ns2" -> "urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2")).count.is(session => session.getTypedAttribute[String]("count").toInt))
       )
       .pause(minWaitMs, maxWaitMs)
     }
