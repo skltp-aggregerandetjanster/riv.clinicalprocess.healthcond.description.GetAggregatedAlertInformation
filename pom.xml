@@ -18,8 +18,8 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 
     <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description</groupId>
     <artifactId>GetAggregatedAlertInformation-parent</artifactId>
-    <version>1.0.1</version>
-    <packaging>pom</packaging>
+    <version>1.0.2</version>
+		<packaging>pom</packaging>
     <name>GetAggregatedAlertInformation-parent</name>
 
     <scm>
