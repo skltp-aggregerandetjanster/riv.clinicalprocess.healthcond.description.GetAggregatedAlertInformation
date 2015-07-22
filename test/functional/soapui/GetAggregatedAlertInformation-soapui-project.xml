@@ -43,9 +43,9 @@
   </wsdl:service>
   <xs:annotation>
     <xs:documentation>Tjänsteinteraktionens namn: GetAlertInformationInteraction
-			 Beskrivning: 
+			 Beskrivning:
 			   Request alert information for a subject of care
-			 Revisioner: 
+			 Revisioner:
 			 Tjänstedomän: clinicalprocess:healthcond:description
 			 Tjänsteinteraktionstyp: Fråga-Svar
 			 WS-profil: RIVTABP21
@@ -119,7 +119,7 @@
   </xs:complexType>
   <xs:complexType name="CareDocumentationBodyType">
     <xs:annotation>
-      <xs:documentation>clinicalDocumentNote: 
+      <xs:documentation>clinicalDocumentNote:
 					Dokument/anteckning
 				multimediaEntry:
 					Multimedia som finns i dokumentet, motsvaras av platshållare i careDocumentNoteText</xs:documentation>
@@ -186,16 +186,16 @@
       <xs:documentation>
         Dokument/anteckning
 
-                clinicalDocumentNoteCode: 
-                    Typ av vård- och omsorgsdokument. 
-                clinicalDocumentNoteTitle: 
+                clinicalDocumentNoteCode:
+                    Typ av vård- och omsorgsdokument.
+                clinicalDocumentNoteTitle:
                     Titel på dokument
-                clinicalDocumentNoteText: 
-                    Själva dokumentet. 
-                    Formatet i textfältet ska följa HL7 CDA "Narrative Block". 
+                clinicalDocumentNoteText:
+                    Själva dokumentet.
+                    Formatet i textfältet ska följa HL7 CDA "Narrative Block".
                     Om dokumentet innehåller multimedia läggs en platshållare i texten enligt formatet
         <renderMultiMedia referencedObject="MM1"/>
-        . 
+        .
                     Innehåller dokumentet fler multimedia läggs ytterligare platshållare i texten, där referencesObject får namn "MM2", "MM3" osv
       </xs:documentation>
     </xs:annotation>
@@ -211,32 +211,32 @@
   </xs:complexType>
   <xs:complexType name="PatientSummaryHeaderType">
     <xs:annotation>
-      <xs:documentation>documentId: 
+      <xs:documentation>documentId:
                     Vårddokumentets unika identifierare.
-                    OID kan sättas till 1.2.752.129.2.1.2.1 
+                    OID kan sättas till 1.2.752.129.2.1.2.1
                     (Icke-nationell identifierare Org+lokalt unikt id)
-				sourceSystemHSAId: 
+				sourceSystemHSAId:
 	                HSAid för det system som dokumentet är skapat i
-                documentTitle: 
+                documentTitle:
                     Titel på dokumentet/anteckningen
-                documentTime: 
+                documentTime:
                     Relevant tid, definieras för varje meddelande
-                patientId: 
+                patientId:
                     Patientens ID. Root sätts till typ av patientidentifierare
-                    Bland tillåtna typer för finns: 
-                    personnummer (1.2.752.129.2.1.3.1), 
-                    samordningsnummer (1.2.752.129.2.1.3.3), 
+                    Bland tillåtna typer för finns:
+                    personnummer (1.2.752.129.2.1.3.1),
+                    samordningsnummer (1.2.752.129.2.1.3.3),
                     reservnummer SLL (1.2.752.97.3.1.3)
                 author
                     Information om författare till dokumentet
                 legalAuthenticator
                     Information om vem som signerat informationen i dokumentet.
                 approvedForPatient:
-                    Anger om information får delas till patient. Värdet sätts i 
+                    Anger om information får delas till patient. Värdet sätts i
                     sådant fall till true, i annat fall till false.
                 careContactId:
-                    Identitet för den vård- och omsorgskontakt som föranlett den 
-                    information som omfattas av dokumentet. Identiteten är unik 
+                    Identitet för den vård- och omsorgskontakt som föranlett den
+                    information som omfattas av dokumentet. Identiteten är unik
                     inom källsystemet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -258,32 +258,32 @@
         of PatientSummaryHeaderType above when we go for the next major version-->
   <xs:complexType name="CPatientSummaryHeaderType">
     <xs:annotation>
-      <xs:documentation>documentId: 
+      <xs:documentation>documentId:
                 Vårddokumentets unika identifierare.
-                OID kan sättas till 1.2.752.129.2.1.2.1 
+                OID kan sättas till 1.2.752.129.2.1.2.1
                 (Icke-nationell identifierare Org+lokalt unikt id)
-                sourceSystemHSAid: 
+                sourceSystemHSAid:
                 HSAid för det system som dokumentet är skapat i
-                documentTitle: 
+                documentTitle:
                 Titel på dokumentet/anteckningen
-                documentTime: 
+                documentTime:
                 Relevant tid, definieras för varje meddelande
-                patientId: 
+                patientId:
                 Patientens ID. Root sätts till typ av patientidentifierare
-                Bland tillåtna typer för finns: 
-                personnummer (1.2.752.129.2.1.3.1), 
-                samordningsnummer (1.2.752.129.2.1.3.3), 
+                Bland tillåtna typer för finns:
+                personnummer (1.2.752.129.2.1.3.1),
+                samordningsnummer (1.2.752.129.2.1.3.3),
                 reservnummer SLL (1.2.752.97.3.1.3)
                 author
                 Information om författare till dokumentet
                 legalAuthenticator
                 Information om vem som signerat informationen i dokumentet.
                 approvedForPatient:
-                Anger om information får delas till patient. Värdet sätts i 
+                Anger om information får delas till patient. Värdet sätts i
                 sådant fall till true, i annat fall till false.
                 careContactId:
-                Identitet för den vård- och omsorgskontakt som föranlett den 
-                information som omfattas av dokumentet. Identiteten är unik 
+                Identitet för den vård- och omsorgskontakt som föranlett den
+                information som omfattas av dokumentet. Identiteten är unik
                 inom källsystemet.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -304,17 +304,17 @@
   <xs:complexType name="HealthcareProfessionalType">
     <xs:annotation>
       <xs:documentation>Information om hälso- och omsorgspesonal
-                
-                healthcareProfessionalHsaId: 
-                HSA-id för vård- och omsorgspersonal 
+
+                healthcareProfessionalHsaId:
+                HSA-id för vård- och omsorgspersonal
                 healthcareProfessionalName
                 Namn på vård- och omsorgspersonal
-                healthcareProfessionalRoleCode: 
-                Information om personens befattning. Om möjligt skall KV Befattning (OID 1.2.752.129.2.2.1.4), se 
+                healthcareProfessionalRoleCode:
+                Information om personens befattning. Om möjligt skall KV Befattning (OID 1.2.752.129.2.2.1.4), se
                 http://www.inera.se/Documents/TJANSTER_PROJEKT/Katalogtjanst_HSA/Innehall/hsa_innehall_befattning.pdf
-                healthcareProfessionalCareUnitHSAid: 
+                healthcareProfessionalCareUnitHSAid:
                 HSA-id för PDL-enhet som vård- och omsorgspersonen är uppdragstagare för
-                healthcareProfessionalCareGiverHSAid: 
+                healthcareProfessionalCareGiverHSAid:
                 HSA-id för vårdgivaren, som är vårdgivare för den enhet som författaren är uppdragstagare för</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -331,18 +331,18 @@
   <xs:complexType name="OrgUnitType">
     <xs:annotation>
       <xs:documentation>Information om en organisationsenhet
-                
-                careContactOrgUnitHsaId: 
+
+                careContactOrgUnitHsaId:
                 HSA-id för organisationsenhet
                 careContactOrgUnitName
                 Namn på organisationsenhet
-                careContactOrgUnitTelecom: 
+                careContactOrgUnitTelecom:
                 Telefon till organisationsenhet
-                careContactOrgUnitEmail: 
+                careContactOrgUnitEmail:
                 Epost till enhet
-                careContactOrgUnitAddress: 
+                careContactOrgUnitAddress:
                 Postadress till enhet
-                careContactOrgUnitLocation: 
+                careContactOrgUnitLocation:
                 Text som anger namnet på plats eller ort för enhetens eller funktionens fysiska placering</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -535,17 +535,17 @@
     </xs:sequence>
   </xs:complexType>
   <!--Below: only helper types allowed.
-        
+
         A helper type is a type used in one ore more of the domain schema common types.
         It can also be a type used in two or more service schemas.-->
   <xs:complexType name="DatePeriodType">
     <xs:annotation>
       <xs:documentation>Används för att specificera ett datumintervall
                 med hjälp av start- och slutdatum.
-                
-                start: 
+
+                start:
                     Startdatum på formatet ÅÅÅÅMMDD
-                end: 
+                end:
                     Slutdatum på formatet ÅÅÅÅMMDD</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -581,10 +581,10 @@
     <xs:annotation>
       <xs:documentation>Används för att specificera ett datumintervall
                 med hjälp av start- och slutdatum.
-                
-                start: 
+
+                start:
                 Startdatum på formatet YYYYMMDDhhmmss
-                end: 
+                end:
                 Slutdatum på formatet YYYYMMDDhhmmss</xs:documentation>
     </xs:annotation>
     <xs:sequence>
@@ -598,7 +598,7 @@
       <xs:documentation>A quantity specifying a point on the axis of natural time.
                 A point in time is most often represented as a calendar
                 expression.
-                
+
                 The time has the format YYYYMMDDhhmmss</xs:documentation>
     </xs:annotation>
     <xs:restriction base="xs:string">
@@ -622,10 +622,10 @@
   <xs:complexType name="LegalAuthenticatorType">
     <xs:annotation>
       <xs:documentation>Information om signering
-            
-            signatureTime: 
-            Tidpunkt för signering, format ÅÅÅÅMMDDttmmss. 
-            legalAuthenticatorHSAId: 
+
+            signatureTime:
+            Tidpunkt för signering, format ÅÅÅÅMMDDttmmss.
+            legalAuthenticatorHSAId:
             Information om person som signerat dokumentet
             legalAuthenticatorName:
             Information om person som signerat dokumentet</xs:documentation>
@@ -697,9 +697,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License. You may obtain a copy of the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -907,9 +907,9 @@
  to you under the Apache License, Version 2.0 (the
  "License"); you may not use this file except in compliance
  with the License. You may obtain a copy of the License at
- 
+
  http://www.apache.org/licenses/LICENSE-2.0
- 
+
  Unless required by applicable law or agreed to in writing,
  software distributed under the License is distributed on an
  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
@@ -1113,10 +1113,10 @@
 </xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://localhost:8081/GetAggregatedAlertInformation/service/v2?xsd=../../core_components/itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="urn:riv:itintegration:registry:1" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundläggande informationsobjekt för domänen itintegration:registry (adressering av tjänster)
-			
+
 			Revisionshistorik: 2011-06-27 Mats Ekhammar, Callista Enterprise AB
 				Added ServiceContractType
-			
+
 			Datum:			2011-05-04
 			Beskrivning:	Initial version
 			Författare:		marcus.krantz@callistaenterprise.se</xs:documentation>
@@ -1210,7 +1210,7 @@
       <urn1:GetAlertInformation>
          <urn1:patientId>
 		  <urn2:id>194911172296</urn2:id>
-            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>            
+            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>
          </urn1:patientId>
       </urn1:GetAlertInformation>
    </soapenv:Body>
@@ -1271,9 +1271,9 @@
   </wsdl:service>
   <xs:annotation>
     <xs:documentation>Tjänsteinteraktionens namn: UpdateInteraction
-			 Beskrivning: 
+			 Beskrivning:
 			   Service for adding, updating and removing content to/from engagement index
-			 Revisioner: 
+			 Revisioner:
 			 Tjänstedomän: itintegration:engagementindex
 			 Tjänsteinteraktionstyp: Fråga-Svar
 			 WS-profil: RIVTABP21
@@ -1387,10 +1387,10 @@
 </xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>http://33.33.33.33:8070/vp/Update/1/rivtabp21?xsd=../../core_components/itintegration_registry_1.0.xsd</con:url><con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="urn:riv:itintegration:registry:1" version="1.0" xmlns="urn:riv:itintegration:registry:1" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
     <xs:documentation>Beskrivning: 	Grundl��ggande informationsobjekt f��r dom��nen itintegration:registry (adressering av tj��nster)
-			
+
 			Revisionshistorik: 2011-06-27 Mats Ekhammar, Callista Enterprise AB
 				Added ServiceContractType
-			
+
 			Datum:			2011-05-04
 			Beskrivning:	Initial version
 			F��rfattare:		marcus.krantz@callistaenterprise.se</xs:documentation>
@@ -1806,10 +1806,14 @@ https://qa.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:description><con:settings/
          </urn1:engagementTransaction>
       </urn1:Update>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>ei-env</con:name><con:value>https://test.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:value></con:property></con:properties></con:testSuite><con:testSuite name="TestSuite for Dev"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1: Hämta data från bakomliggande producenter" searchProperties="true" id="3639b2a0-9f9d-427d-a0f1-f0970b5c1ddf"><con:settings/><con:testStep type="request" name="Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Tolvan Tolvansson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
-  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:itintegration:engagementindex:UpdateResponder:1:Update"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>ei-env</con:name><con:value>https://test.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:value></con:property></con:properties></con:testSuite><con:testSuite name="TestSuite skltp-box/dev"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1: Hämta data från bakomliggande producenter" searchProperties="true" id="3639b2a0-9f9d-427d-a0f1-f0970b5c1ddf"><con:settings/><con:testStep type="request" name="Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Tolvan Tolvansson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="x-vp-sender-id" value="test"/>
-&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2" xmlns:urn2="urn:riv:clinicalprocess:healthcond:description:2">
+  &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
+&lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope
+xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+xmlns:urn="urn:riv:itintegration:registry:1"
+xmlns:urn1="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2"
+xmlns:urn2="urn:riv:clinicalprocess:healthcond:description:2">
    <soapenv:Header>
       <urn:LogicalAddress>5565594230</urn:LogicalAddress>
    </soapenv:Header>
@@ -1821,7 +1825,7 @@ https://qa.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:description><con:settings/
          </urn1:patientId>
       </urn1:GetAlertInformation>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:alertInformation)</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Tolvan Tolvansson, Systemadressering"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Tolvan Tolvansson, Systemadressering" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:alertInformation)</path><content>3</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="request" name="Tolvan Tolvansson, Systemadressering"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Tolvan Tolvansson, Systemadressering" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2" xmlns:urn2="urn:riv:clinicalprocess:healthcond:description:2">
@@ -1863,11 +1867,11 @@ https://qa.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:description><con:settings/
       <urn1:GetAlertInformation>
          <urn1:patientId>
 		  <urn2:id>194911172296</urn2:id>
-            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>            
+            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>
          </urn1:patientId>
       </urn1:GetAlertInformation>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Repsponse"><con:configuration><path>count(//*:alertInformation)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC4: Inget svar från ett system, engagemang i flera system" searchProperties="true"><con:settings/><con:testStep type="request" name="Ulla Alm"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Ulla Alm" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>2</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Repsponse"><con:configuration><path>count(//*:alertInformation)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC4: Inget svar från ett system, engagemang i flera system" searchProperties="true" id="df30966e-07c3-4c0e-a2bb-948ca0f49692"><con:settings/><con:testStep type="request" name="Ulla Alm"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Ulla Alm" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="test"/>
 &lt;/xml-fragment></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#TestSuite#agg-env}</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:riv:itintegration:registry:1" xmlns:urn1="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2" xmlns:urn2="urn:riv:clinicalprocess:healthcond:description:2">
@@ -1897,7 +1901,7 @@ https://qa.esb.ntjp.se:443/vp/Update/1/rivtabp21</con:description><con:settings/
          </urn1:patientId>
       </urn1:GetAlertInformation>
    </soapenv:Body>
-</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:alertInformation)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Error"><con:configuration><path>count(//*:lastUnsuccessfulSynchError)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>agg-env</con:name><con:value>http://ine-dit-app02.sth.basefarm.net:9015/GetAggregatedAlertInformation/service/v2</con:value></con:property></con:properties></con:testSuite><con:testSuite name="TestSuite for Test &amp; QA"><con:description>https://test.esb.ntjp.se:443/vp/clinicalprocess/healthcond/description/GetAlertInformation/2/rivtabp21
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" name="SOAP Response"/><con:assertion type="SOAP Fault Assertion" name="Not SOAP Fault"/><con:assertion type="XPath Match" name="XPath Match"><con:configuration><path>count(//*:ProcessingStatus/*:ProcessingStatusList)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Response"><con:configuration><path>count(//*:alertInformation)</path><content>0</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:assertion type="XPath Match" name="Error"><con:configuration><path>count(//*:lastUnsuccessfulSynchError)</path><content>1</content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:selectedAuthProfile>Basic</con:selectedAuthProfile><con:addedBasicAuthenticationTypes>Basic</con:addedBasicAuthenticationTypes><con:authType>Global HTTP Settings</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:riv:clinicalprocess:healthcond:description:GetAlertInformationResponder:2:GetAlertInformation"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties><con:property><con:name>agg-env</con:name><con:value>http://33.33.33.33:8081/GetAggregatedAlertInformation/service/v2</con:value></con:property><con:property><con:name>agg-env-skltp-box</con:name><con:value>http://33.33.33.33:8081/GetAggregatedAlertInformation/service/v2</con:value></con:property><con:property><con:name>agg-env-dev</con:name><con:value>http://ine-dit-app02.sth.basefarm.net:9015/GetAggregatedAlertInformation/service/v2</con:value></con:property></con:properties></con:testSuite><con:testSuite name="TestSuite for Test &amp; QA"><con:description>https://test.esb.ntjp.se:443/vp/clinicalprocess/healthcond/description/GetAlertInformation/2/rivtabp21
 https://qa.esb.ntjp.se:443/vp/clinicalprocess/healthcond/description/GetAlertInformation/2/rivtabp21</con:description><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="TC1: Hämta data från bakomliggande producenter" searchProperties="true" id="b9ff3701-d381-45ce-89a8-47812562f2c0"><con:settings/><con:testStep type="request" name="Tolvan Tolvansson"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>GetAlertInformationResponderBinding</con:interface><con:operation>GetAlertInformation</con:operation><con:request name="Tolvan Tolvansson" outgoingWss="" incomingWss="" timeout="" sslKeystore="" useWsAddressing="false" useWsReliableMessaging="false" wssPasswordType=""><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">
   &lt;con:entry key="x-rivta-original-serviceconsumer-hsaid" value="test"/>
   &lt;con:entry key="x-vp-sender-id" value="test"/>
@@ -1955,7 +1959,7 @@ https://qa.esb.ntjp.se:443/vp/clinicalprocess/healthcond/description/GetAlertInf
       <urn1:GetAlertInformation>
          <urn1:patientId>
 		  <urn2:id>194911172296</urn2:id>
-            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>            
+            <urn2:type>1.2.752.129.2.1.3.1</urn2:type>
          </urn1:patientId>
       </urn1:GetAlertInformation>
    </soapenv:Body>
