@@ -3,10 +3,8 @@ package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description.
 import java.util.Date;
 import java.util.UUID;
 
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.soitoolkit.commons.mule.jaxb.JaxbUtil;
 import org.soitoolkit.commons.mule.util.ThreadSafeSimpleDateFormat;
 
 import riv.clinicalprocess.healthcond.description.getalertinformationresponder.v2.GetAlertInformationResponseType;
@@ -18,7 +16,6 @@ import riv.clinicalprocess.healthcond.description.v2.HyperSensitivityType;
 import riv.clinicalprocess.healthcond.description.v2.OrgUnitType;
 import riv.clinicalprocess.healthcond.description.v2.PatientSummaryHeaderType;
 import riv.clinicalprocess.healthcond.description.v2.PersonIdType;
-import riv.clinicalprocess.healthcond.description.v2.SeriousDiseaseType;
 import riv.clinicalprocess.healthcond.description.v2.TimePeriodType;
 import se.skltp.agp.test.producer.TestProducerDb;
 
@@ -28,14 +25,6 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 			.getLogger(GetAggregatedAlertInformationTestProducerDb.class);
 	private static final ThreadSafeSimpleDateFormat df = new ThreadSafeSimpleDateFormat("yyyyMMddhhmmss");
 	
-	@Override
-	public Object processRequest(final String logicalAddress, final String registeredResidentId) {
-		if(TEST_LOGICAL_ADDRESS_6.equals(logicalAddress)) {
-			throw new RuntimeException("Logical address to trigger exception was called: " + logicalAddress);
-		}
-		return super.processRequest(logicalAddress, registeredResidentId);
-	}
-
 	@Override
 	public Object createResponse(Object... responseItems) {
 		log.info("Creates a response with {} items", responseItems);
