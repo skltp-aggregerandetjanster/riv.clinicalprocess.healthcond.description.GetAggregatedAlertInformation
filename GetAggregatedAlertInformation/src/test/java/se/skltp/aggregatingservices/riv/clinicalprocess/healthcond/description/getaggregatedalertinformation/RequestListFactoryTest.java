@@ -3,9 +3,14 @@ package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description.
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import org.joda.time.DateTime;
+import org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormatter;
+import org.joda.time.format.ISODateTimeFormat;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
@@ -63,4 +68,59 @@ public class RequestListFactoryTest {
 		assertFalse(new RequestListFactoryImpl().isPartOf("TEST_1", "TEST_2"));
 	}
 	
+    @Test
+    public void testIsBetweenNulls() {
+        Date fromRequestDate = null;
+        Date toRequestDate = null;
+        String mostRecentContentTimestamp = "";
+        assertTrue (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+
+    @Test
+    public void testIsBetweenFalse1() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        String mostRecentContentTimestamp                                          = "20140617153000";
+        assertFalse (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+
+    @Test
+    public void testIsBetweenFalse2() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        String mostRecentContentTimestamp                                          = "20130131095832";
+        assertFalse (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+    
+    @Test
+    public void testIsBetweenFalse3() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        String mostRecentContentTimestamp                                          = "20130131095830";
+        assertFalse (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+    
+    @Test
+    public void testIsBetweenTrue1() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("18880131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20990131").toDate();
+        String mostRecentContentTimestamp                                          = "20130131095831";
+        assertTrue (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+    
+    @Test
+    public void testIsBetweenTrue2() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20130201").toDate();
+        String mostRecentContentTimestamp                                          = "20130131095831";
+        assertTrue (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
+    
+    @Test
+    public void testIsBetweenTrue3() {
+        Date   fromRequestDate = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20110131").toDate();
+        Date   toRequestDate   = DateTimeFormat.forPattern("yyyyMMdd").parseDateTime("20150131").toDate();
+        String mostRecentContentTimestamp                                          = "20130131095831";
+        assertTrue (testObject.isBetween(fromRequestDate, toRequestDate, mostRecentContentTimestamp));
+    }
 }
