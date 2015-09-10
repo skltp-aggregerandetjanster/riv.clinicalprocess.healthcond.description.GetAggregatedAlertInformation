@@ -24,7 +24,7 @@ public class GetAggregatedAlertInformationTestConsumer extends AbstractTestConsu
 		String serviceAddress = GetAggregatedAlertInformationMuleServer.getAddress("SERVICE_INBOUND_URL");
 		String personnummer = TEST_RR_ID_ONE_HIT;
 
-		GetAggregatedAlertInformationTestConsumer consumer = new GetAggregatedAlertInformationTestConsumer(serviceAddress, SAMPLE_SENDER_ID, SAMPLE_ORIGINAL_CONSUMER_HSAID);
+		GetAggregatedAlertInformationTestConsumer consumer = new GetAggregatedAlertInformationTestConsumer(serviceAddress, SAMPLE_SENDER_ID, SAMPLE_ORIGINAL_CONSUMER_HSAID, SAMPLE_CORRELATION_ID);
 		Holder<GetAlertInformationResponseType> responseHolder = new Holder<GetAlertInformationResponseType>();
 		Holder<ProcessingStatusType> processingStatusHolder = new Holder<ProcessingStatusType>();
 
@@ -36,10 +36,10 @@ public class GetAggregatedAlertInformationTestConsumer extends AbstractTestConsu
 
 	}
 
-	public GetAggregatedAlertInformationTestConsumer(String serviceAddress, String senderId, String originalConsumerHsaId) {
+	public GetAggregatedAlertInformationTestConsumer(String serviceAddress, String senderId, String originalConsumerHsaId, String correlationId) {
 	    
 		// Setup a web service proxy for communication using HTTPS with Mutual Authentication
-		super(GetAlertInformationResponderInterface.class, serviceAddress, senderId, originalConsumerHsaId);
+		super(GetAlertInformationResponderInterface.class, serviceAddress, senderId, originalConsumerHsaId, correlationId);
 	}
 
 	public void callService(String logicalAddress, String registeredResidentId, Holder<ProcessingStatusType> processingStatusHolder, Holder<GetAlertInformationResponseType> responseHolder) {

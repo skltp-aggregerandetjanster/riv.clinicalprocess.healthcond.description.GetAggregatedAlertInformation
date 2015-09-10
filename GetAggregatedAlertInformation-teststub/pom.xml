@@ -20,6 +20,10 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <packaging>mule</packaging>
     <name>GetAggregatedAlertInformation-teststub</name>
 
+    <properties>
+        <skltp.agp.version>1.3.5</skltp.agp.version>
+    </properties>
+
 	<dependencies>
 	  <!-- dependencies to the integration component that contains the services to stub -->
     <dependency>
@@ -38,13 +42,13 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <dependency>
         <groupId>se.skltp.agp</groupId>
         <artifactId>agp-core</artifactId>
-        <version>1.3.1</version>
+        <version>${skltp.agp.version}</version>
       </dependency>
 
     <dependency>
        <groupId>se.skltp.agp</groupId>
        <artifactId>agp-test-common</artifactId>
-       <version>1.3.1</version>
+       <version>${skltp.agp.version}</version>
     </dependency>
 
 	</dependencies>
