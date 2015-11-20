@@ -20,11 +20,6 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <packaging>mule</packaging>
     <name>GetAggregatedAlertInformation</name>
 
-    <properties>
-        <skltp.agp.version>1.3.5</skltp.agp.version>
-        <mule.version>3.3.1</mule.version>
-    </properties>
-
 	<dependencies>
         <dependency>
 		    <groupId>se.skltp.agp</groupId>
@@ -71,12 +66,6 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
         </dependency>
 
 		<!-- Mockito -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-all</artifactId>
-			<scope>test</scope>
-			<version>1.8.5</version>
-		</dependency>
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
