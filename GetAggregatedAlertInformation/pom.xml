@@ -13,7 +13,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <parent>
         <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description</groupId>
         <artifactId>GetAggregatedAlertInformation-parent</artifactId>
-        <version>1.0.4-RC1-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>GetAggregatedAlertInformation</artifactId>
@@ -191,7 +191,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
                 -->
                 <classifier>core</classifier>
                 <excludes>
-                  <exclude>log4j.xml</exclude>
+                  <exclude>log4j2.xml</exclude>
                 </excludes>
               </configuration>
               <executions>
@@ -218,8 +218,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 				  <resource>
 				    <directory>src/environment</directory>
 					  <includes>
-					    <include>log4j.xml</include>
-					    <include>log4j.dtd</include>
+					    <include>log4j2.xml</include>
 					  </includes>
 				  </resource>
 				</resources>
