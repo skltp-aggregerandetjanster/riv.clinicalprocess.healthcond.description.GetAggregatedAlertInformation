@@ -27,7 +27,7 @@ public class GetAggregatedAlertInformationTestProducerDb extends TestProducerDb 
 	
 	@Override
 	public Object createResponse(Object... responseItems) {
-		log.info("Creates a response with {} items", responseItems);
+		log.info("Creates a response with {} items", responseItems.length);
 		GetAlertInformationResponseType response = new GetAlertInformationResponseType();
 		for (int i = 0; i < responseItems.length; i++) {
 			response.getAlertInformation().add((AlertInformationType) responseItems[i]);
