@@ -8,6 +8,7 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 	<spring:beans>
 		<!-- Load all resources needed by the core artifact -->
 		<spring:import resource="classpath:aggregating-services-common.xml" />
+		
 		<!-- 3. Replacement for org.springframework.beans.factory.config.PropertyPlaceholderConfigurer 
 			that supports decrypting encrypted property values -->
 		<spring:bean
@@ -23,8 +24,10 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 				</spring:list>
 			</spring:property>
 		</spring:bean>
+		
 		<!-- Load all teststub services -->
 		<spring:import resource="classpath:teststub-services/*-teststub-service.xml" />
-      		<spring:import resource="classpath:teststub-non-default-services/tak-teststub-service.xml" />
+      	<spring:import resource="classpath:teststub-non-default-services/tak-teststub-service.xml" />
+      	
 	</spring:beans>
 </mule>
