@@ -25,5 +25,6 @@ http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/cor
 		</spring:bean>
 		<!-- Load all teststub services -->
 		<spring:import resource="classpath:teststub-services/*-teststub-service.xml" />
+      		<spring:import resource="classpath:teststub-non-default-services/tak-teststub-service.xml" />
 	</spring:beans>
 </mule>
