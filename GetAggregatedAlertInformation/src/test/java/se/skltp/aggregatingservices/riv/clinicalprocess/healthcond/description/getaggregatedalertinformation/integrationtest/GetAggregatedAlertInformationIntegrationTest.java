@@ -58,7 +58,8 @@ public class GetAggregatedAlertInformationIntegrationTest extends AbstractAggreg
 //			"aggregating-services-common.xml," +
 //	        "aggregating-service.xml," +
 			"teststub-services/engagemangsindex-teststub-service.xml," +
-			"teststub-services/service-producer-teststub-service.xml";
+			"teststub-services/service-producer-teststub-service.xml," +
+            "teststub-non-default-services/tak-teststub-service.xml";
     }
 
 	/**
