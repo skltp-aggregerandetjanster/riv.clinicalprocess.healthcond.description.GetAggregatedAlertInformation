@@ -24,6 +24,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 
   <properties>
     <skltp.agp.version>2.2</skltp.agp.version>
+    <mule.version>3.7.0</mule.version>
     <additionalparam>-Xdoclint:none</additionalparam>
   </properties>
 
