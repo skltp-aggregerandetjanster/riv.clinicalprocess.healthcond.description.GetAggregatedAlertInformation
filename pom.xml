@@ -18,7 +18,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
 
   <groupId>se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description</groupId>
   <artifactId>GetAggregatedAlertInformation-parent</artifactId>
-  <version>1.2.2-SNAPSHOT</version>
+  <version>1.2.2-RC1</version>
   <packaging>pom</packaging>
   <name>GetAggregatedAlertInformation-parent</name>
 
@@ -32,7 +32,7 @@ DON'T CHANGE THE CONTENT OF THIS COMMENT UNLESS YOU REALLY KNOW WHAT YOU ARE DOI
     <url>http://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation</url>
     <connection>scm:git:https://github.com:443/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation.git</connection>
     <developerConnection>scm:git:https://github.com:443/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>v1.2.2-RC1</tag>
   </scm>
 
   <modules>
