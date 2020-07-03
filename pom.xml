@@ -20,14 +20,15 @@
     <apache-cfx.version>3.2.7</apache-cfx.version>
   </properties>
 
-    <scm>
-			<url/>
-			<connection/>
-			<developerConnection/>
-      <tag>HEAD</tag>
-  	</scm>
+  <scm>
+    <url>http://github.com/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation</url>
+    <connection>scm:git:https://github.com:443/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation.git</connection>
+    <developerConnection>scm:git:https://github.com:443/skltp-aggregerandetjanster/riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation.git</developerConnection>
+    <tag>HEAD</tag>
+  </scm>
 
-  <modules>  <module>GetAggregatedAlertInformation-v2-schemas</module>
+  <modules>
+    <module>GetAggregatedAlertInformation-v2-schemas</module>
     <module>GetAggregatedAlertInformation-v2-teststub</module>
     <module>GetAggregatedAlertInformation-v2-main</module>
     <module>GetAggregatedAlertInformation-v2-runner</module>
