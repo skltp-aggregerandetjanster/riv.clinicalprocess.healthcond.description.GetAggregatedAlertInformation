@@ -1,4 +1,3 @@
-riv.clinicalprocess.healthcond.description.GetAggregatedAlertInformation
-========================================================================
+GetAggregatedAlertInformation-v2
 
-By using this SKLTP distribution the user and the users organisation agrees to comply with the terms specified by Mules' Common Public Attribution License (CPAL https://www.mulesoft.com/cpal )
+Tjänsten implementerar version 2 av tjänstekontraktaktet (urn:riv:clinicalprocess:healthcond:description:GetAlertInformation:2:rivtabp21)
