@@ -1,13 +1,13 @@
 package se.skltp.aggregatingservices.riv.clinicalprocess.healthcond.description.getaggregatedalertinformation;
 
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 import riv.clinicalprocess.healthcond.description.getalertinformationresponder.v2.GetAlertInformationResponseType;
 import se.skltp.aggregatingservices.api.AgpServiceFactory;
 import se.skltp.aggregatingservices.tests.CreateAggregatedResponseTest;
 
 
-@RunWith(SpringJUnit4ClassRunner.class)
+@ExtendWith(SpringExtension.class)
 public class GAICreateAggregatedResponseTest extends CreateAggregatedResponseTest {
 
   private static GAIAgpServiceConfiguration configuration = new GAIAgpServiceConfiguration();
